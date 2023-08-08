@@ -6,7 +6,7 @@ function Install-Siomax {
     Start-BitsTransfer -Source $URL -Destination $Path\$Installer
 
     Write-Host "Installing Siomax 7..."
-    Start-Process -FilePath $Path\$Installer -Verb RunAs -Wait
+    Start-Process -FilePath $Path\$Installer -Args "/S" -Verb RunAs -Wait
     Remove-Item $Path\$Installer
 }
 
